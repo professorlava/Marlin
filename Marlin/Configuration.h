@@ -642,8 +642,8 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define DEFAULT_XJERK                 10.0
-#define DEFAULT_YJERK                 10.0
+#define DEFAULT_XJERK                 7.0
+#define DEFAULT_YJERK                 7.0
 #define DEFAULT_ZJERK                  0.3
 #define DEFAULT_EJERK                  5.0
 
@@ -873,16 +873,33 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 235
+// MARLIN ASSUMES THE ENTIRE BED IS WITHIN THE TRAVEL AREA SO WE MUST CLIP IT
+#define X_BED_SIZE 233.5
 #define Y_BED_SIZE 235
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define X_MIN_POS 1.5 // The Endstop cannot be adjusted
+#define Y_MIN_POS -4
+
 #define Z_MIN_POS 0
-#define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
+#define X_MAX_POS 235
+#define Y_MAX_POS 235
 #define Z_MAX_POS 250
+
+/*
+// The size of the print bed
+#define X_BED_SIZE 220
+#define Y_BED_SIZE 220
+
+// Travel limits (mm) after homing, corresponding to endstop positions.
+#define X_MIN_POS -6
+#define Y_MIN_POS -9.5
+
+#define Z_MIN_POS 0
+#define X_MAX_POS 235
+#define Y_MAX_POS 235
+#define Z_MAX_POS 250
+*/
 
 /**
  * Software Endstops
@@ -1068,7 +1085,7 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 15          // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 5    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
