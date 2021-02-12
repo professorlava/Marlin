@@ -12,7 +12,7 @@ git checkout -b upstream_2.0.x upstream/2.0.x
 
 ```
 
-<img align="right" src="../../raw/1.1.x/buildroot/share/pixmaps/logo/marlin-250.png" />
+<img align="right" src="buildroot/share/pixmaps/logo/marlin-250.png" />
 
 ## Marlin 1.1
 
