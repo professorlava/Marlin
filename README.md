@@ -1,3 +1,15 @@
+# Zachary Schoenstadt Custom Configurations
+
+* Wayland: Ender-3 w\ MKS Gen L mainboard
+
+### Maintainence Notes:
+On new clones, setup upstream branch for updates and merging:
+```
+git remote add upstream https://github.com/MarlinFirmware/Marlin.git
+git checkout -b upstream_2.0.x upstream/2.0.x
+
+```
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
