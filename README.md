@@ -6,8 +6,8 @@
 On new clones, setup upstream branch for updates and merging:
 ```
 git remote add upstream https://github.com/MarlinFirmware/Marlin.git
-git checkout -b upstream_2.0.x upstream/2.0.x
 
+git rebase --onto upstream/2.0.x <hash of last commit before my commits>
 ```
 
 # Marlin 3D Printer Firmware
