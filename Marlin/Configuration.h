@@ -72,8 +72,6 @@
 // Author info of this build printed to the host during boot and M115
 #define STRING_CONFIG_H_AUTHOR "(ZLS, Ender-3)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
-//XXX #define STRING_SPLASH_LINE1 SHORT_BUILD_VERSION // will be shown during bootup in line 1
-//XXX #define STRING_SPLASH_LINE2 WEBSITE_URL         // will be shown during bootup in line 2
 
 /**
  * *** VENDORS PLEASE READ ***
@@ -794,7 +792,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-//#define CLASSIC_JERK
+#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK  10.0
   #define DEFAULT_YJERK  10.0
@@ -818,7 +816,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.08 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -1135,26 +1133,11 @@
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 1.5 // The Endstop cannot be adjusted
 #define Y_MIN_POS -4
-
 #define Z_MIN_POS 0
+
 #define X_MAX_POS 235
 #define Y_MAX_POS 235
 #define Z_MAX_POS 250
-
-/*
-// The size of the print bed
-#define X_BED_SIZE 220
-#define Y_BED_SIZE 220
-
-// Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -6
-#define Y_MIN_POS -9.5
-
-#define Z_MIN_POS 0
-#define X_MAX_POS 235
-#define Y_MAX_POS 235
-#define Z_MAX_POS 250
-*/
 
 /**
  * Software Endstops
